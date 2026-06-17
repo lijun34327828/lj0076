@@ -1,0 +1,14 @@
+{
+  "name": "fruit-store-dashboard",
+  "version": "1.0.0",
+  "description": "社区水果店每日销量统计看板",
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

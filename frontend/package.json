@@ -1,0 +1,12 @@
+{
+  "name": "fruit-store-frontend",
+  "version": "1.0.0",
+  "description": "社区水果店可视化统计看板",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

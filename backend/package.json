@@ -1,0 +1,13 @@
+{
+  "name": "fruit-store-backend",
+  "version": "1.0.0",
+  "description": "社区水果店数据聚合计算服务",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}

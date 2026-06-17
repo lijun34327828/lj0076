@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>社区水果店 - 每日销量统计看板</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>🍎 社区水果店销售统计看板</h1>
+      <div class="period-switcher">
+        <button class="period-btn active" data-period="day">今日</button>
+        <button class="period-btn" data-period="week">本周</button>
+      </div>
+    </header>
+
+    <div class="date-info" id="dateInfo">
+      <span id="dateLabel">今日日期</span>
+    </div>
+
+    <div class="stats-cards">
+      <div class="stat-card total-sales">
+        <div class="stat-icon">💰</div>
+        <div class="stat-content">
+          <div class="stat-label">总销售额</div>
+          <div class="stat-value" id="totalSales">¥0.00</div>
+        </div>
+      </div>
+      <div class="stat-card order-count">
+        <div class="stat-icon">📋</div>
+        <div class="stat-content">
+          <div class="stat-label">订单数量</div>
+          <div class="stat-value" id="orderCount">0</div>
+        </div>
+      </div>
+      <div class="stat-card avg-order">
+        <div class="stat-icon">📊</div>
+        <div class="stat-content">
+          <div class="stat-label">平均客单价</div>
+          <div class="stat-value" id="avgOrderValue">¥0.00</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="panel top-fruits">
+        <h2>🏆 销量 TOP 榜单</h2>
+        <div class="top-list" id="topFruitsList">
+          <div class="empty-state">数据加载中...</div>
+        </div>
+      </div>
+
+      <div class="panel fruit-detail">
+        <h2>🍊 各类水果销售明细</h2>
+        <div class="fruit-table-wrapper">
+          <table class="fruit-table">
+            <thead>
+              <tr>
+                <th>水果名称</th>
+                <th>单价(元/斤)</th>
+                <th>销售数量(斤)</th>
+                <th>销售金额(元)</th>
+              </tr>
+            </thead>
+            <tbody id="fruitTableBody">
+              <tr><td colspan="4" class="empty-state">数据加载中...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel week-chart-panel" id="weekChartPanel" style="display: none;">
+      <h2>📈 近7天销售趋势</h2>
+      <div class="week-chart" id="weekChart"></div>
+    </div>
+
+    <footer class="footer">
+      <p>数据来源：门店订单原始数据 | 计算公式简单直观，支持人工核对</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
