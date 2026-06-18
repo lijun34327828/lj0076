@@ -10,6 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 const DATA_FILE = path.join(__dirname, 'orders.json');
+const SAMPLE_FILE = path.join(__dirname, 'sample_orders.json');
 
 const FRUITS = [
   { id: 1, name: '苹果', price: 8.5 },
@@ -32,53 +33,8 @@ function ensureDataFile() {
 }
 
 function generateMockOrders() {
-  const orders = [];
-  let orderId = 1;
-  const now = new Date();
-
-  for (let dayOffset = 6; dayOffset >= 0; dayOffset--) {
-    const date = new Date(now);
-    date.setDate(date.getDate() - dayOffset);
-    const dateStr = formatDate(date);
-
-    const orderCount = 15 + Math.floor(Math.random() * 20);
-
-    for (let i = 0; i < orderCount; i++) {
-      const itemCount = 1 + Math.floor(Math.random() * 4);
-      const items = [];
-      const usedFruits = new Set();
-
-      for (let j = 0; j < itemCount; j++) {
-        let fruitIdx;
-        do {
-          fruitIdx = Math.floor(Math.random() * FRUITS.length);
-        } while (usedFruits.has(fruitIdx));
-        usedFruits.add(fruitIdx);
-
-        const fruit = FRUITS[fruitIdx];
-        const quantity = 0.5 + Math.floor(Math.random() * 5) * 0.5;
-        items.push({
-          fruitId: fruit.id,
-          fruitName: fruit.name,
-          price: fruit.price,
-          quantity: quantity,
-          subtotal: parseFloat((fruit.price * quantity).toFixed(2))
-        });
-      }
-
-      const totalAmount = items.reduce((sum, item) => sum + item.subtotal, 0);
-
-      orders.push({
-        id: orderId++,
-        date: dateStr,
-        time: generateRandomTime(),
-        items: items,
-        totalAmount: parseFloat(totalAmount.toFixed(2))
-      });
-    }
-  }
-
-  return orders;
+  const data = fs.readFileSync(SAMPLE_FILE, 'utf-8');
+  return JSON.parse(data);
 }
 
 function generateRandomTime() {

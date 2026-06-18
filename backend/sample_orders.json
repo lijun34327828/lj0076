@@ -1,0 +1,691 @@
+[
+  {
+    "id": 1,
+    "date": "2026-06-12",
+    "time": "09:15",
+    "items": [
+      {
+        "fruitId": 1,
+        "fruitName": "苹果",
+        "price": 8.5,
+        "quantity": 2,
+        "subtotal": 17
+      },
+      {
+        "fruitId": 2,
+        "fruitName": "香蕉",
+        "price": 4.5,
+        "quantity": 1.5,
+        "subtotal": 6.75
+      }
+    ],
+    "totalAmount": 23.75
+  },
+  {
+    "id": 2,
+    "date": "2026-06-12",
+    "time": "10:30",
+    "items": [
+      {
+        "fruitId": 5,
+        "fruitName": "西瓜",
+        "price": 3.2,
+        "quantity": 4,
+        "subtotal": 12.8
+      }
+    ],
+    "totalAmount": 12.8
+  },
+  {
+    "id": 3,
+    "date": "2026-06-12",
+    "time": "14:20",
+    "items": [
+      {
+        "fruitId": 3,
+        "fruitName": "橙子",
+        "price": 6.8,
+        "quantity": 2.5,
+        "subtotal": 17
+      },
+      {
+        "fruitId": 8,
+        "fruitName": "梨",
+        "price": 5.5,
+        "quantity": 1,
+        "subtotal": 5.5
+      }
+    ],
+    "totalAmount": 22.5
+  },
+  {
+    "id": 4,
+    "date": "2026-06-13",
+    "time": "08:45",
+    "items": [
+      {
+        "fruitId": 6,
+        "fruitName": "草莓",
+        "price": 25,
+        "quantity": 0.5,
+        "subtotal": 12.5
+      },
+      {
+        "fruitId": 1,
+        "fruitName": "苹果",
+        "price": 8.5,
+        "quantity": 1,
+        "subtotal": 8.5
+      }
+    ],
+    "totalAmount": 21
+  },
+  {
+    "id": 5,
+    "date": "2026-06-13",
+    "time": "11:10",
+    "items": [
+      {
+        "fruitId": 7,
+        "fruitName": "芒果",
+        "price": 15,
+        "quantity": 1.5,
+        "subtotal": 22.5
+      },
+      {
+        "fruitId": 2,
+        "fruitName": "香蕉",
+        "price": 4.5,
+        "quantity": 2,
+        "subtotal": 9
+      }
+    ],
+    "totalAmount": 31.5
+  },
+  {
+    "id": 6,
+    "date": "2026-06-13",
+    "time": "15:30",
+    "items": [
+      {
+        "fruitId": 4,
+        "fruitName": "葡萄",
+        "price": 12,
+        "quantity": 1,
+        "subtotal": 12
+      },
+      {
+        "fruitId": 9,
+        "fruitName": "桃子",
+        "price": 7.8,
+        "quantity": 2,
+        "subtotal": 15.6
+      }
+    ],
+    "totalAmount": 27.6
+  },
+  {
+    "id": 7,
+    "date": "2026-06-13",
+    "time": "17:45",
+    "items": [
+      {
+        "fruitId": 5,
+        "fruitName": "西瓜",
+        "price": 3.2,
+        "quantity": 5,
+        "subtotal": 16
+      }
+    ],
+    "totalAmount": 16
+  },
+  {
+    "id": 8,
+    "date": "2026-06-14",
+    "time": "09:00",
+    "items": [
+      {
+        "fruitId": 1,
+        "fruitName": "苹果",
+        "price": 8.5,
+        "quantity": 3,
+        "subtotal": 25.5
+      },
+      {
+        "fruitId": 10,
+        "fruitName": "菠萝",
+        "price": 9,
+        "quantity": 1,
+        "subtotal": 9
+      }
+    ],
+    "totalAmount": 34.5
+  },
+  {
+    "id": 9,
+    "date": "2026-06-14",
+    "time": "10:45",
+    "items": [
+      {
+        "fruitId": 3,
+        "fruitName": "橙子",
+        "price": 6.8,
+        "quantity": 1,
+        "subtotal": 6.8
+      },
+      {
+        "fruitId": 2,
+        "fruitName": "香蕉",
+        "price": 4.5,
+        "quantity": 0.5,
+        "subtotal": 2.25
+      },
+      {
+        "fruitId": 8,
+        "fruitName": "梨",
+        "price": 5.5,
+        "quantity": 1.5,
+        "subtotal": 8.25
+      }
+    ],
+    "totalAmount": 17.3
+  },
+  {
+    "id": 10,
+    "date": "2026-06-14",
+    "time": "13:15",
+    "items": [
+      {
+        "fruitId": 6,
+        "fruitName": "草莓",
+        "price": 25,
+        "quantity": 1,
+        "subtotal": 25
+      }
+    ],
+    "totalAmount": 25
+  },
+  {
+    "id": 11,
+    "date": "2026-06-14",
+    "time": "16:20",
+    "items": [
+      {
+        "fruitId": 7,
+        "fruitName": "芒果",
+        "price": 15,
+        "quantity": 2,
+        "subtotal": 30
+      },
+      {
+        "fruitId": 9,
+        "fruitName": "桃子",
+        "price": 7.8,
+        "quantity": 0.5,
+        "subtotal": 3.9
+      }
+    ],
+    "totalAmount": 33.9
+  },
+  {
+    "id": 12,
+    "date": "2026-06-15",
+    "time": "08:30",
+    "items": [
+      {
+        "fruitId": 5,
+        "fruitName": "西瓜",
+        "price": 3.2,
+        "quantity": 3,
+        "subtotal": 9.6
+      },
+      {
+        "fruitId": 2,
+        "fruitName": "香蕉",
+        "price": 4.5,
+        "quantity": 1,
+        "subtotal": 4.5
+      }
+    ],
+    "totalAmount": 14.1
+  },
+  {
+    "id": 13,
+    "date": "2026-06-15",
+    "time": "11:00",
+    "items": [
+      {
+        "fruitId": 4,
+        "fruitName": "葡萄",
+        "price": 12,
+        "quantity": 1.5,
+        "subtotal": 18
+      },
+      {
+        "fruitId": 1,
+        "fruitName": "苹果",
+        "price": 8.5,
+        "quantity": 1.5,
+        "subtotal": 12.75
+      }
+    ],
+    "totalAmount": 30.75
+  },
+  {
+    "id": 14,
+    "date": "2026-06-15",
+    "time": "14:45",
+    "items": [
+      {
+        "fruitId": 10,
+        "fruitName": "菠萝",
+        "price": 9,
+        "quantity": 2,
+        "subtotal": 18
+      },
+      {
+        "fruitId": 3,
+        "fruitName": "橙子",
+        "price": 6.8,
+        "quantity": 1.5,
+        "subtotal": 10.2
+      }
+    ],
+    "totalAmount": 28.2
+  },
+  {
+    "id": 15,
+    "date": "2026-06-15",
+    "time": "17:30",
+    "items": [
+      {
+        "fruitId": 8,
+        "fruitName": "梨",
+        "price": 5.5,
+        "quantity": 2,
+        "subtotal": 11
+      },
+      {
+        "fruitId": 9,
+        "fruitName": "桃子",
+        "price": 7.8,
+        "quantity": 1,
+        "subtotal": 7.8
+      }
+    ],
+    "totalAmount": 18.8
+  },
+  {
+    "id": 16,
+    "date": "2026-06-16",
+    "time": "09:10",
+    "items": [
+      {
+        "fruitId": 6,
+        "fruitName": "草莓",
+        "price": 25,
+        "quantity": 0.5,
+        "subtotal": 12.5
+      },
+      {
+        "fruitId": 7,
+        "fruitName": "芒果",
+        "price": 15,
+        "quantity": 1,
+        "subtotal": 15
+      },
+      {
+        "fruitId": 1,
+        "fruitName": "苹果",
+        "price": 8.5,
+        "quantity": 0.5,
+        "subtotal": 4.25
+      }
+    ],
+    "totalAmount": 31.75
+  },
+  {
+    "id": 17,
+    "date": "2026-06-16",
+    "time": "10:55",
+    "items": [
+      {
+        "fruitId": 5,
+        "fruitName": "西瓜",
+        "price": 3.2,
+        "quantity": 6,
+        "subtotal": 19.2
+      }
+    ],
+    "totalAmount": 19.2
+  },
+  {
+    "id": 18,
+    "date": "2026-06-16",
+    "time": "13:40",
+    "items": [
+      {
+        "fruitId": 2,
+        "fruitName": "香蕉",
+        "price": 4.5,
+        "quantity": 2.5,
+        "subtotal": 11.25
+      },
+      {
+        "fruitId": 4,
+        "fruitName": "葡萄",
+        "price": 12,
+        "quantity": 0.5,
+        "subtotal": 6
+      }
+    ],
+    "totalAmount": 17.25
+  },
+  {
+    "id": 19,
+    "date": "2026-06-16",
+    "time": "16:15",
+    "items": [
+      {
+        "fruitId": 3,
+        "fruitName": "橙子",
+        "price": 6.8,
+        "quantity": 3,
+        "subtotal": 20.4
+      },
+      {
+        "fruitId": 10,
+        "fruitName": "菠萝",
+        "price": 9,
+        "quantity": 0.5,
+        "subtotal": 4.5
+      }
+    ],
+    "totalAmount": 24.9
+  },
+  {
+    "id": 20,
+    "date": "2026-06-16",
+    "time": "18:00",
+    "items": [
+      {
+        "fruitId": 8,
+        "fruitName": "梨",
+        "price": 5.5,
+        "quantity": 0.5,
+        "subtotal": 2.75
+      },
+      {
+        "fruitId": 9,
+        "fruitName": "桃子",
+        "price": 7.8,
+        "quantity": 1.5,
+        "subtotal": 11.7
+      }
+    ],
+    "totalAmount": 14.45
+  },
+  {
+    "id": 21,
+    "date": "2026-06-17",
+    "time": "08:50",
+    "items": [
+      {
+        "fruitId": 1,
+        "fruitName": "苹果",
+        "price": 8.5,
+        "quantity": 2,
+        "subtotal": 17
+      },
+      {
+        "fruitId": 2,
+        "fruitName": "香蕉",
+        "price": 4.5,
+        "quantity": 1,
+        "subtotal": 4.5
+      }
+    ],
+    "totalAmount": 21.5
+  },
+  {
+    "id": 22,
+    "date": "2026-06-17",
+    "time": "11:25",
+    "items": [
+      {
+        "fruitId": 6,
+        "fruitName": "草莓",
+        "price": 25,
+        "quantity": 1.5,
+        "subtotal": 37.5
+      }
+    ],
+    "totalAmount": 37.5
+  },
+  {
+    "id": 23,
+    "date": "2026-06-17",
+    "time": "14:05",
+    "items": [
+      {
+        "fruitId": 7,
+        "fruitName": "芒果",
+        "price": 15,
+        "quantity": 0.5,
+        "subtotal": 7.5
+      },
+      {
+        "fruitId": 5,
+        "fruitName": "西瓜",
+        "price": 3.2,
+        "quantity": 2.5,
+        "subtotal": 8
+      }
+    ],
+    "totalAmount": 15.5
+  },
+  {
+    "id": 24,
+    "date": "2026-06-17",
+    "time": "16:40",
+    "items": [
+      {
+        "fruitId": 4,
+        "fruitName": "葡萄",
+        "price": 12,
+        "quantity": 2,
+        "subtotal": 24
+      },
+      {
+        "fruitId": 3,
+        "fruitName": "橙子",
+        "price": 6.8,
+        "quantity": 0.5,
+        "subtotal": 3.4
+      },
+      {
+        "fruitId": 10,
+        "fruitName": "菠萝",
+        "price": 9,
+        "quantity": 1,
+        "subtotal": 9
+      }
+    ],
+    "totalAmount": 36.4
+  },
+  {
+    "id": 25,
+    "date": "2026-06-17",
+    "time": "17:55",
+    "items": [
+      {
+        "fruitId": 8,
+        "fruitName": "梨",
+        "price": 5.5,
+        "quantity": 1,
+        "subtotal": 5.5
+      },
+      {
+        "fruitId": 9,
+        "fruitName": "桃子",
+        "price": 7.8,
+        "quantity": 0.5,
+        "subtotal": 3.9
+      }
+    ],
+    "totalAmount": 9.4
+  },
+  {
+    "id": 26,
+    "date": "2026-06-18",
+    "time": "09:20",
+    "items": [
+      {
+        "fruitId": 1,
+        "fruitName": "苹果",
+        "price": 8.5,
+        "quantity": 1,
+        "subtotal": 8.5
+      },
+      {
+        "fruitId": 6,
+        "fruitName": "草莓",
+        "price": 25,
+        "quantity": 0.5,
+        "subtotal": 12.5
+      },
+      {
+        "fruitId": 7,
+        "fruitName": "芒果",
+        "price": 15,
+        "quantity": 1,
+        "subtotal": 15
+      }
+    ],
+    "totalAmount": 36
+  },
+  {
+    "id": 27,
+    "date": "2026-06-18",
+    "time": "10:50",
+    "items": [
+      {
+        "fruitId": 5,
+        "fruitName": "西瓜",
+        "price": 3.2,
+        "quantity": 3.5,
+        "subtotal": 11.2
+      },
+      {
+        "fruitId": 2,
+        "fruitName": "香蕉",
+        "price": 4.5,
+        "quantity": 1.5,
+        "subtotal": 6.75
+      }
+    ],
+    "totalAmount": 17.95
+  },
+  {
+    "id": 28,
+    "date": "2026-06-18",
+    "time": "13:30",
+    "items": [
+      {
+        "fruitId": 4,
+        "fruitName": "葡萄",
+        "price": 12,
+        "quantity": 0.5,
+        "subtotal": 6
+      },
+      {
+        "fruitId": 3,
+        "fruitName": "橙子",
+        "price": 6.8,
+        "quantity": 2,
+        "subtotal": 13.6
+      },
+      {
+        "fruitId": 10,
+        "fruitName": "菠萝",
+        "price": 9,
+        "quantity": 0.5,
+        "subtotal": 4.5
+      }
+    ],
+    "totalAmount": 24.1
+  },
+  {
+    "id": 29,
+    "date": "2026-06-18",
+    "time": "15:15",
+    "items": [
+      {
+        "fruitId": 8,
+        "fruitName": "梨",
+        "price": 5.5,
+        "quantity": 2.5,
+        "subtotal": 13.75
+      },
+      {
+        "fruitId": 9,
+        "fruitName": "桃子",
+        "price": 7.8,
+        "quantity": 2,
+        "subtotal": 15.6
+      }
+    ],
+    "totalAmount": 29.35
+  },
+  {
+    "id": 30,
+    "date": "2026-06-18",
+    "time": "17:10",
+    "items": [
+      {
+        "fruitId": 1,
+        "fruitName": "苹果",
+        "price": 8.5,
+        "quantity": 1.5,
+        "subtotal": 12.75
+      },
+      {
+        "fruitId": 7,
+        "fruitName": "芒果",
+        "price": 15,
+        "quantity": 1.5,
+        "subtotal": 22.5
+      }
+    ],
+    "totalAmount": 35.25
+  },
+  {
+    "id": 31,
+    "date": "2026-06-18",
+    "time": "18:25",
+    "items": [
+      {
+        "fruitId": 2,
+        "fruitName": "香蕉",
+        "price": 4.5,
+        "quantity": 0.5,
+        "subtotal": 2.25
+      },
+      {
+        "fruitId": 6,
+        "fruitName": "草莓",
+        "price": 25,
+        "quantity": 1,
+        "subtotal": 25
+      },
+      {
+        "fruitId": 5,
+        "fruitName": "西瓜",
+        "price": 3.2,
+        "quantity": 2,
+        "subtotal": 6.4
+      }
+    ],
+    "totalAmount": 33.65
+  }
+]
