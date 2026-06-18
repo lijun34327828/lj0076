@@ -13,6 +13,7 @@
       <div class="period-switcher">
         <button class="period-btn active" data-period="day">今日</button>
         <button class="period-btn" data-period="week">本周</button>
+        <button class="period-btn" data-period="month">本月</button>
       </div>
     </header>
 
@@ -45,10 +46,19 @@
     </div>
 
     <div class="main-content">
-      <div class="panel top-fruits">
-        <h2>🏆 销量 TOP 榜单</h2>
-        <div class="top-list" id="topFruitsList">
-          <div class="empty-state">数据加载中...</div>
+      <div class="left-column">
+        <div class="panel top-fruits">
+          <h2>🏆 销量 TOP 榜单</h2>
+          <div class="top-list" id="topFruitsList">
+            <div class="empty-state">数据加载中...</div>
+          </div>
+        </div>
+
+        <div class="panel bottom-fruits">
+          <h2>⚠️ 滞销提醒</h2>
+          <div class="bottom-list" id="bottomFruitsList">
+            <div class="empty-state">数据加载中...</div>
+          </div>
         </div>
       </div>
 
@@ -72,9 +82,9 @@
       </div>
     </div>
 
-    <div class="panel week-chart-panel" id="weekChartPanel" style="display: none;">
-      <h2>📈 近7天销售趋势</h2>
-      <div class="week-chart" id="weekChart"></div>
+    <div class="panel trend-chart-panel" id="trendChartPanel" style="display: none;">
+      <h2 id="trendChartTitle">📈 销售趋势</h2>
+      <div class="trend-chart" id="trendChart"></div>
     </div>
 
     <footer class="footer">

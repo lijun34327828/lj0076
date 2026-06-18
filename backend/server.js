@@ -65,6 +65,19 @@ function getWeekDates() {
   return dates;
 }
 
+function getMonthDates() {
+  const dates = [];
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  for (let i = 1; i <= daysInMonth; i++) {
+    const d = new Date(year, month, i);
+    dates.push(formatDate(d));
+  }
+  return dates;
+}
+
 function readOrders() {
   const data = fs.readFileSync(DATA_FILE, 'utf-8');
   return JSON.parse(data);
@@ -120,12 +133,17 @@ function calculateStatistics(orders) {
     .sort((a, b) => b.totalQuantity - a.totalQuantity)
     .slice(0, 5);
 
+  const bottomFruits = [...fruitStats]
+    .sort((a, b) => a.totalQuantity - b.totalQuantity)
+    .slice(0, 3);
+
   return {
     totalSales: parseFloat(totalSales.toFixed(2)),
     orderCount,
     avgOrderValue: parseFloat(avgOrderValue.toFixed(2)),
     fruitStats,
-    topFruits
+    topFruits,
+    bottomFruits
   };
 }
 
@@ -168,6 +186,23 @@ app.get('/api/stats/week', (req, res) => {
     period: 'week',
     startDate: weekDates[0],
     endDate: weekDates[weekDates.length - 1],
+    ...stats,
+    dailyStats
+  });
+});
+
+app.get('/api/stats/month', (req, res) => {
+  ensureDataFile();
+  const orders = readOrders();
+  const monthDates = getMonthDates();
+  const monthOrders = filterOrdersByDates(orders, monthDates);
+  const stats = calculateStatistics(monthOrders);
+  const dailyStats = generateDailyStats(orders, monthDates);
+
+  res.json({
+    period: 'month',
+    startDate: monthDates[0],
+    endDate: monthDates[monthDates.length - 1],
     ...stats,
     dailyStats
   });

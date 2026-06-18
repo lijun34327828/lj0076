@@ -3,9 +3,14 @@ const API_BASE = 'http://localhost:8846/api';
 let currentPeriod = 'day';
 
 async function fetchStats(period) {
-  const url = period === 'day' 
-    ? `${API_BASE}/stats/day` 
-    : `${API_BASE}/stats/week`;
+  let url;
+  if (period === 'day') {
+    url = `${API_BASE}/stats/day`;
+  } else if (period === 'week') {
+    url = `${API_BASE}/stats/week`;
+  } else {
+    url = `${API_BASE}/stats/month`;
+  }
   
   const response = await fetch(url);
   if (!response.ok) {
@@ -27,14 +32,22 @@ function formatDateLabel(dateStr) {
   return `${month}月${day}日 ${weekDay}`;
 }
 
+function formatMonthLabel(dateStr) {
+  const date = new Date(dateStr);
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  return `${year}年${month}月`;
+}
+
 function renderDateInfo(data) {
-  const dateInfoEl = document.getElementById('dateInfo');
   const dateLabelEl = document.getElementById('dateLabel');
   
   if (data.period === 'day') {
     dateLabelEl.textContent = `📅 ${formatDateLabel(data.date)}`;
-  } else {
+  } else if (data.period === 'week') {
     dateLabelEl.textContent = `📅 ${formatDateLabel(data.startDate)} ~ ${formatDateLabel(data.endDate)}`;
+  } else {
+    dateLabelEl.textContent = `📅 ${formatMonthLabel(data.startDate)}`;
   }
 }
 
@@ -67,6 +80,29 @@ function renderTopFruits(topFruits) {
   `).join('');
 }
 
+function renderBottomFruits(bottomFruits) {
+  const listEl = document.getElementById('bottomFruitsList');
+  
+  if (!bottomFruits || bottomFruits.length === 0) {
+    listEl.innerHTML = '<div class="empty-state">暂无销售数据</div>';
+    return;
+  }
+
+  listEl.innerHTML = bottomFruits.map((fruit, index) => `
+    <div class="bottom-item">
+      <div class="bottom-rank">${index + 1}</div>
+      <div class="bottom-info">
+        <div class="bottom-name">${fruit.fruitName}</div>
+        <div class="bottom-sub">单价 ¥${fruit.price.toFixed(2)}/斤</div>
+      </div>
+      <div class="bottom-amount">
+        <div><span class="quantity">${fruit.totalQuantity}</span><span class="unit">斤</span></div>
+        <div class="amount">¥${fruit.totalAmount.toFixed(2)}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
 function renderFruitTable(fruitStats) {
   const tbodyEl = document.getElementById('fruitTableBody');
   
@@ -85,16 +121,23 @@ function renderFruitTable(fruitStats) {
   `).join('');
 }
 
-function renderWeekChart(dailyStats) {
-  const panelEl = document.getElementById('weekChartPanel');
-  const chartEl = document.getElementById('weekChart');
+function renderTrendChart(dailyStats, period) {
+  const panelEl = document.getElementById('trendChartPanel');
+  const chartEl = document.getElementById('trendChart');
+  const titleEl = document.getElementById('trendChartTitle');
   
-  if (currentPeriod !== 'week') {
+  if (period === 'day') {
     panelEl.style.display = 'none';
     return;
   }
 
   panelEl.style.display = 'block';
+
+  if (period === 'week') {
+    titleEl.textContent = '📈 近7天销售趋势';
+  } else {
+    titleEl.textContent = '📈 本月销售趋势';
+  }
 
   if (!dailyStats || dailyStats.length === 0) {
     chartEl.innerHTML = '<div class="empty-state">暂无数据</div>';
@@ -111,12 +154,19 @@ function renderWeekChart(dailyStats) {
     const weekDays = ['日', '一', '二', '三', '四', '五', '六'];
     const weekDay = weekDays[date.getDay()];
 
+    let dateLabel;
+    if (period === 'week') {
+      dateLabel = `${month}/${dayNum} 周${weekDay}`;
+    } else {
+      dateLabel = `${month}/${dayNum}`;
+    }
+
     return `
-      <div class="week-bar-wrapper">
-        <div class="week-bar" style="height: ${Math.max(heightPercent, 2)}%;">
-          <div class="week-bar-value">¥${day.totalSales.toFixed(0)}</div>
+      <div class="trend-bar-wrapper">
+        <div class="trend-bar" style="height: ${Math.max(heightPercent, 2)}%;">
+          <div class="trend-bar-value">¥${day.totalSales.toFixed(0)}</div>
         </div>
-        <div class="week-bar-date">${month}/${dayNum} 周${weekDay}</div>
+        <div class="trend-bar-date">${dateLabel}</div>
       </div>
     `;
   }).join('');
@@ -129,12 +179,13 @@ async function loadData() {
     renderDateInfo(data);
     renderStatsCards(data);
     renderTopFruits(data.topFruits);
+    renderBottomFruits(data.bottomFruits);
     renderFruitTable(data.fruitStats);
     
-    if (data.period === 'week') {
-      renderWeekChart(data.dailyStats);
+    if (data.period === 'week' || data.period === 'month') {
+      renderTrendChart(data.dailyStats, data.period);
     } else {
-      document.getElementById('weekChartPanel').style.display = 'none';
+      document.getElementById('trendChartPanel').style.display = 'none';
     }
   } catch (error) {
     console.error('加载数据失败:', error);
@@ -142,6 +193,8 @@ async function loadData() {
     document.getElementById('orderCount').textContent = '-';
     document.getElementById('avgOrderValue').textContent = '-';
     document.getElementById('topFruitsList').innerHTML = 
+      '<div class="empty-state">数据加载失败，请确认后端服务已启动</div>';
+    document.getElementById('bottomFruitsList').innerHTML = 
       '<div class="empty-state">数据加载失败，请确认后端服务已启动</div>';
     document.getElementById('fruitTableBody').innerHTML = 
       '<tr><td colspan="4" class="empty-state">数据加载失败，请确认后端服务已启动</td></tr>';
